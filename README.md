@@ -8,13 +8,13 @@ autor: Tomasz Wiśniewski
 2. Przejdź do katalogu comparecompanyinfo: `$cd comparecompanyinfo`;
 3. Upewnij się, że jesteś w katalogu comparecompanyinfo: `$pwd`;
 4. Zbuduj obraz dockera: `$docker build -t comparecompanyinfo .`;
-5. Uruchom kontener: `$docker run -d -p 5000:5000 --name comparecompanyinfo_container comparecompanyinfo`;
+5. Uruchom kontener: `$docker-compose up`;
 6. Serwer jest uruchomiony!
 
 
 **Instrukcja użycia:**
 
-Pod adres `http://127.0.0.1:5000/companyinfocorectness` wysyłamy zapytanie metodą POST o części body w formacie json o zadanej strukturze:
+Pod adres `http://0.0.0.0:33301/companyinfocorectness` wysyłamy zapytanie metodą POST o części body w formacie json o zadanej strukturze:
 
 ```
 {
