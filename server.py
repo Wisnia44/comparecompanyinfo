@@ -7,7 +7,9 @@ app.config["DEBUG"] = True
 
 @app.route('/companyinfocorectness', methods = ['POST'])
 def company_info_corectness():
-    content = request.get_json()
+    content_json = request.json
+    content = json.loads(content_json)
+    
     nip1 = content['nip1']
     regon1 = content['regon1']
     krs1 = content['krs1']
@@ -22,7 +24,7 @@ def company_info_corectness():
     else:
     	response['response'] = 'False'
     response_json = json.dumps(response)
-    return response
+    return jsonify(response_json)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=33301, debug=True)
